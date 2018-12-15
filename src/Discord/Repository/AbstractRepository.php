@@ -383,16 +383,6 @@ abstract class AbstractRepository implements RepositoryInterface, ArrayAccess, C
     }
 
     /**
-     * Handles debug calls from var_dump and similar functions.
-     *
-     * @return array An array of attributes.
-     */
-    public function __debugInfo()
-    {
-        return $this->all();
-    }
-
-    /**
      * Handles dynamic calls to the repository.
      *
      * @param string $function The function called.

@@ -529,18 +529,6 @@ abstract class Part implements ArrayAccess, Serializable, JsonSerializable
     }
 
     /**
-     * Handles debug calls from var_dump and similar functions.
-     *
-     * @return array An array of public attributes.
-     *
-     * @see self::getPublicAttributes() This function forwards onto getPublicAttributes.
-     */
-    public function __debugInfo()
-    {
-        return $this->getPublicAttributes();
-    }
-
-    /**
      * Handles dynamic get calls onto the part.
      *
      * @param string $key The attributes key.
