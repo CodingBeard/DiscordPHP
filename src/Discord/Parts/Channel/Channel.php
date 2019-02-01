@@ -325,6 +325,30 @@ class Channel extends Part
     }
 
     /**
+     *
+     * @param Message $message
+     *
+     * @return \React\Promise\Promise
+     */
+    public function deleteMessage($message)
+    {
+        $deferred = new Deferred();
+
+        if (!is_a($message, Message::class)) {
+            $deferred->reject(new \Exception('$message must be a message.'));
+
+            return $deferred->promise();
+        }
+
+        $this->http->delete("channels/{$this->id}/messages/{$message->id}")->then(
+            \React\Partial\bind_right($this->resolve, $deferred),
+            \React\Partial\bind_right($this->reject, $deferred)
+        );
+
+        return $deferred->promise();
+    }
+
+    /**
      * Fetches message history.
      *
      * @param array $options
