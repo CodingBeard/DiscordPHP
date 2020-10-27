@@ -52,6 +52,6 @@ class Application extends Part
      */
     public function getInviteURLAttribute($permissions = 0)
     {
-        return "https://discordapp.com/oauth2/authorize?client_id={$this->id}&scope=bot&permissions={$permissions}";
+        return "https://discord.com/oauth2/authorize?client_id={$this->id}&scope=bot&permissions={$permissions}";
     }
 }
