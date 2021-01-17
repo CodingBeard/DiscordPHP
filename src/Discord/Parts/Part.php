@@ -68,7 +68,7 @@ abstract class Part implements ArrayAccess, Serializable, JsonSerializable
      *
      * @var array The parts attributes and content.
      */
-    protected $attributes = [];
+    public $attributes = [];
 
     /**
      * The parts attributes cache.
